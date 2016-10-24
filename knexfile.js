@@ -1,4 +1,4 @@
-const databaseName = 'node_token_auth';
+const databaseName = 'coffee_db';
 
 module.exports = {
   development: {
