@@ -13,4 +13,18 @@ router.get('/', function (req, res, next) {
   .catch(err => next(err));
 });
 
+router.get('/:id', function (req, res, next) {
+  const id = req.params.id;
+
+  return knex('coffee')
+  .where('id', id)
+  .then(coffee => {
+    res.status(200).json({
+      status: 'success',
+      data: coffee
+    });
+  })
+  .catch(err => next(err));
+});
+
 module.exports = router;
